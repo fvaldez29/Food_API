@@ -7,9 +7,9 @@ dotenv.config()
 
 export const registerController = async (req, res) => {
     try {
-        const { userName, email, password, phone, address } = req.body;
+        const { userName, email, password, phone, address, answer } = req.body;
         // Validación
-        if (!userName || !email || !password || !address || !phone) {
+        if (!userName || !email || !password || !address || !phone || !answer) {
             return res.status(500).send({
                 success: false,
                 message: 'Please Provide all fields'
@@ -31,7 +31,8 @@ export const registerController = async (req, res) => {
                 email, 
                 password: hashedPassword, 
                 address, 
-                phone 
+                phone,
+                answer
             });
         res.status(201).send({
             success: true,

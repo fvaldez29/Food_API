@@ -24,9 +24,7 @@ app.use(morgan('dev'))
 //route
 app.use('/api/v1/test', router)
 app.use('/api/v1/auth', routers)
-app.use('/api/v1/auth', routers)
 app.use('/api/v1/user', userRouter)
-app.use('/api/v1/updateUser', userRouter)
 
 
 app.get('/', (req, res) => {

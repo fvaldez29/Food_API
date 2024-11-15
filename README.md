@@ -6,7 +6,6 @@ La **Food-App API** es una API RESTful construida con Node.js y Express. Está d
 
 ## Estructura de Carpetas
 
-## Estructura de Archivos
 
 ```plaintext
 food-app/

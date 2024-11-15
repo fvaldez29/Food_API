@@ -30,6 +30,10 @@ const userSchame = new mongoose.Schema({
     profile:{
         type:String,
         default: 'https://img.freepik.com/premium-vector/avatar-icon0002_750950-43.jpg?semt=ais_hybrid'
+    },
+    answer: {
+        type: String,
+        required: [true, 'Answer required']
     }
 }, {timestamps: true})
 

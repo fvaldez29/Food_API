@@ -1,5 +1,5 @@
 import express from 'express'
-import { getUserController, updateUserController } from '../controllers/userController.js';
+import { deleteUserController, getUserController, resetPasswordController, updateUserController } from '../controllers/userController.js';
 import authMiddleware from '../middlewares/authMiddleware.js';
 
 const userRouter = express.Router()
@@ -10,7 +10,15 @@ userRouter.get('/getUser', authMiddleware, getUserController)
 
 
 // ? UPDATE USER
-userRouter.patch('/updateUser', authMiddleware, updateUserController)
+userRouter.post('/updateUser', authMiddleware, updateUserController)
+
+
+// ? RESET PASSWORD
+userRouter.post('/resetPassword', authMiddleware, resetPasswordController)
+
+
+//? DELETE USER
+userRouter.delete('/deleteAccount/:id', authMiddleware, deleteUserController)
 
 export default userRouter;
 
